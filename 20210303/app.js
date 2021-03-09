@@ -35,9 +35,12 @@ myFunction(); */
 
 fetchData(); */
 
+
 const fetchData = async() => {
-    
+
     let selectedCountry = document.getElementById("selectCtrl");
+
+    console.log(selectedCountry.value);
 
     let response = await fetch(`http://newsapi.org/v2/top-headlines?country=${selectedCountry.value}&category=business&apiKey=7ebc4db1e2d9422887564c2b18f0fe2b`);
 
@@ -65,7 +68,6 @@ const renderData = async() => {
                                     </div>
                                 </div>
                             </div>`;
-
 
         artContainer.innerHTML += alertTemplate;
 
