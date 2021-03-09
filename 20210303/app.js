@@ -37,9 +37,12 @@ fetchData(); */
 
 const fetchData = async() => {
     
-    let response = await fetch("http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=7ebc4db1e2d9422887564c2b18f0fe2b");
+    let selectedCountry = document.getElementById("selectCtrl");
+
+    let response = await fetch(`http://newsapi.org/v2/top-headlines?country=${selectedCountry.value}&category=business&apiKey=7ebc4db1e2d9422887564c2b18f0fe2b`);
 
     let dataJson = await response.json();
+    
     return dataJson.articles;
 
 }
@@ -47,6 +50,7 @@ const fetchData = async() => {
 const renderData = async() => {
 
     const articles = await fetchData();
+    
     let artContainer = document.getElementById("articles");
 
     let urlImageNotFound = "https://tse2.mm.bing.net/th?id=OIP.h7QSnBwg4jn3BnqNqF5drAHaEK&pid=Api&P=0&w=357&h=201";
@@ -61,7 +65,10 @@ const renderData = async() => {
                                     </div>
                                 </div>
                             </div>`;
+
+
         artContainer.innerHTML += alertTemplate;
+
     });
 }
 

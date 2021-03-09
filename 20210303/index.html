@@ -12,14 +12,26 @@
 
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CESDE</a>
+            <a class="navbar-brand" href="#">WORLD NEWS SERVICE</a>
         </div>
     </nav>
 
     <div id="container">
+        <div id="divSelect">
+            <select id="selectCtrl" class="form-select navbar navbar-light bg-info" onchange="location.reload()">
+                <option value="us">United States of America</option>
+                <option value="co">Colombia</option>
+                <option value="de">Germany</option>
+                <option value="ar">Argentina</option>
+                <option value="no">Norway</option>
+                <option value="ru">Russian Federation</option>
+            </select>
+        </div>
         <div class="row" id="articles">
         </div>
     </div>
+
+    
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
